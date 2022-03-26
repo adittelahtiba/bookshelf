@@ -31,4 +31,9 @@ export class BooksService {
     async updateBooks(code : string,title : string,author : string, stock:number){
         return await this.booksModel.findOneAndUpdate({code},{code,title,author,stock})
     }
+
+    async deleteBook(code:string):Promise<Books>{
+        const book = await this.booksModel.findOneAndDelete({code}).exec();
+        return book;        
+    }
 }
