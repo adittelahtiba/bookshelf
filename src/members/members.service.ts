@@ -29,7 +29,7 @@ export class MembersService {
     }
 
     async updateMembers(code : string,name : string){
-        return await this.membersModel.findOneAndUpdate({code},{code})
+        return await this.membersModel.findOneAndUpdate({code},{name})
     }
 
     async deleteMember(code:string):Promise<Members>{
