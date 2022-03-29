@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { BooksModule } from './books/books.module';
 import { MembersModule } from './members/members.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { BorrowsModule } from './borrows/borrows.module';
 
 @Module({
-  imports: [BooksModule,MembersModule,MongooseModule.forRoot('mongodb://localhost:27017/bookshelf')],
+  imports: [BooksModule,MembersModule,BorrowsModule,MongooseModule.forRoot('mongodb+srv://adityapangestu:adityapangestu@cluster0.1juvq.mongodb.net/bookshelf?retryWrites=true&w=majority')],
   controllers: [AppController],
   providers: [AppService],
 })
